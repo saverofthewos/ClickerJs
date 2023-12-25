@@ -16,9 +16,9 @@ var ClickCounter = React.createClass({
     return (
       <div>
         <p>
-          Clicks: {Math.floor(this.props.clicks)}
+          Kids in basement: {Math.floor(this.props.clicks)}
           <br/>
-          Autoclicking at {this.props.clickDelta.toFixed(0)} clicks per second (cps).
+          Kidnapping at {this.props.clickDelta.toFixed(0)} kids per second (kps).
         </p>
       </div>
     );
@@ -108,7 +108,7 @@ var ClickerWindow = React.createClass({
     for (var i = 0; i < this.props.upgradeFullList.length; i++) {
       var ratepersecond = this.props.upgradeFullList[i].ratepersecond;
       // Add to clicks for each upgrade of this level that exists
-      clicks = clicks + ratepersecond * this.state.upgrades[i] * rate_multiplier;
+      clicks = clicks * (ratepersecond*0.3) * this.state.upgrades[i] * rate_multiplier;
     };
     this.setState({'clicks': clicks});
   },
